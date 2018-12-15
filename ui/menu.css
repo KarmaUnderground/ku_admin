@@ -1,0 +1,138 @@
+body {
+    background-color: transparent;
+    overflow: hidden;
+    /*
+    */
+    display: none;
+    zoom: 100%;
+}
+
+a {
+    color: #632b2b;
+}
+
+h3 {
+    color: #632b2b;
+}
+.container {
+    background-color: #fff;
+    border: solid 1px #888;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px rgb(53, 53, 53);
+    opacity: .95;
+    overflow: hidden;
+    padding: 1px 16px;
+    position: relative;
+}
+
+.header {
+    background-color: #632b2b;
+    border-radius: 5px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    height: 35px;
+}
+
+.header .col.title {
+    font-weight: bold;
+    color: #fff;
+    padding-top: 5px;
+}
+
+.header .col.quit {
+    color: #fff;
+    text-align: right;
+    padding-top: 5px;
+}
+
+.content .panels {
+    position: relative;
+    overflow: auto;
+    height:100%;
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+
+.content .panels .tab-pane {
+    position: absolute;
+    width:100%;
+    top:0;
+}
+
+.content .panels .tab-pane h3 {
+    margin-top: 5px;
+    padding-bottom: 5px;
+    width: 100%;
+    border-bottom: solid 1px #632b2b;
+}
+
+.content .panels .tab-pane .pane-content {
+    overflow: auto;
+}
+
+.content .panels .tab-pane .pane-content table {
+    font-size: 12px;
+}
+
+.content .panels .tab-pane .pane-content table tr {
+    
+}
+
+.content .panels .tab-pane .pane-content table tr.odd {
+
+}
+
+.content .panels .tab-pane .pane-content table th {
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: #632b2b;
+    color: #ffffff;
+}
+
+.content .panels .tab-pane .pane-content table td {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    position: relative;
+    white-space: nowrap;
+}
+
+.content .panels .tab-pane .pane-content table td.action {
+    text-align: center;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.content .panels .tab-pane .pane-content table button.actions_player {
+    width:100%;
+}
+
+.dd_actions_player {
+    top:26px;
+    left: 12px;
+    padding-left: 15px;
+    box-shadow: 5px 5px 5px rgb(107, 107, 107);
+}
+
+.menu {
+    padding-top: 10px;
+}
+
+.menu .nav-tabs .nav-item.show .nav-link,
+.menu .nav-tabs .nav-link.active {
+    padding-top: 10px;
+    border-color: #632b2b;
+    border-bottom-color: transparent;
+}
+
+.menu .nav-tabs {
+    border-bottom: 1px solid #632b2b;
+}
+
+.footer {
+    background-color: #632b2b;
+    border-radius: 5px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    height: 15px;
+}
