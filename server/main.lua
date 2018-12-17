@@ -32,3 +32,22 @@ ESX.RegisterServerCallback('ku_admin:getPlayers', function(source, cb)
 
     cb(users)
 end)
+
+TriggerEvent('ku_admin:registerUIAdminTabs', GetCurrentResourceName(), {
+    tab_players = {
+        label = 'Players',
+        root = 'ui.test/players_tab',
+        main_file = 'index.html',
+        files = {
+            'index.html',
+            'players.css',
+            'players.js',
+            'template1.html',
+            'components/template2.html',
+            'components/template2.js',
+            'components/template3.js',
+            'components/template2.css',
+            'components/css/another.css'
+        }
+    }
+})

@@ -12,6 +12,14 @@ Citizen.CreateThread(function()
 
     SetNuiFocus(false)
     xPlayer = ESX.GetPlayerData()
+
+    ESX.TriggerServerCallback("ku_admin:getUIAdminTabs", function(tabs)
+        print(tabs)
+        SendNUIMessage({
+            action = "ku_admin_set_tabs",
+            tabs = tabs
+        })
+    end)
 end)
 
 -- **********************************
@@ -68,3 +76,21 @@ RegisterNUICallback('get_players', function()
         })
     end)
 end)
+
+--[[
+AddEventHandler('ku:registerAdminUITab', function(resource, templates, files)
+    --local f_content = LoadResourceFile(resource, 'ui/players_tab/index.html')
+    local files = RegisterResourceAsset(resource, 'ui/players_tab/index.js')
+    local f_content = LoadResourceFile(resource, 'ui/players_tab/index.js')
+end)
+]]
+
+--[[
+    TriggerEvent('ku:registerAdminUITab', 'ku_admin', 'players', {
+        html = {
+            'ui/players_tab'
+        },
+        javascript = {},
+        css = {}
+    })
+]]
