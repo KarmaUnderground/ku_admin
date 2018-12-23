@@ -1,3 +1,5 @@
+let players_tab = null;
+
 $(function() {
     window.addEventListener('message', function(event){
         switch(event.data.action){
@@ -5,6 +7,7 @@ $(function() {
                 $(".dd_actions_player").removeClass("animated rollIn rollOut")
                 break;
             case "ku_admin_players_refresh_panel":
+                players_tab = event.data.tab;
                 $.post('http://ku_admin/getPlayers');
                 break;
             case "ku_admin_set_players":
@@ -14,6 +17,8 @@ $(function() {
     })
 
     function build_players_datatable(data) {
+        data.templates = players_tab.templates;
+
         let tpl = $('#player_table_tpl').html();
         let result = Mustache.render(tpl, data);
         $('#player_table').html(result);
@@ -33,6 +38,7 @@ $(function() {
             $(".dd_actions_player").addClass("animated fadeOut").one("webkitAnimationEnd mozAnimationEnd oAnimationEnd animationend", function(){
                 $(this).removeClass("animated fadeOut");
                 $(".dd_actions_player").hide();
+                $("body").append($(".dd_actions_player"));
             });
         });
     }

@@ -35,7 +35,10 @@ $(function() {
         $('.nav.nav-tabs a').click(function() {
             let obj = $(this);
             let event = new MessageEvent('message', {
-                data: { action: global_tabs[obj.attr('tab_id')].refresh_function }
+                data: {
+                    action: global_tabs[obj.attr('tab_id')].refresh_function,
+                    tab: global_tabs[obj.attr('tab_id')]
+                }
             });
 
             window.dispatchEvent(event);
@@ -46,6 +49,8 @@ $(function() {
         $('.panels div.panel').first().addClass('show');
 
         $('.nav.nav-tabs a').first().click();
+
+        $('.header .col.quit').click(function(){close_menu();});
     }
 
     function show_menu() {
@@ -80,18 +85,4 @@ $(function() {
             close_menu();
         }
     };
-
-    function log_info(msg) {
-        $('.row.panels .col').html(msg);
-    }
-
-    /*
-    $('.nav-tabs .nav-item .nav-link[href="#skills"]').click(function(){
-        //alert("skills");
-    });
-
-    $('.nav-tabs .nav-item .nav-link[href="#careers"]').click(function(){
-        //alert("careers");
-    });
-    */
 })
