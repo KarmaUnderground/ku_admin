@@ -33,7 +33,7 @@ AddEventHandler('ku_admin:registerUIAdminTabs', function(resource, tabs)
             end
         end
 
-        table.insert(admin_tabs, tab)
+        admin_tabs[resource ..'/' .. tab.root] = tab
     end
 end)
 
@@ -62,5 +62,10 @@ function extract_css(template, files)
 end
 
 ESX.RegisterServerCallback('ku_admin:getUIAdminTabs', function(source, cb)
-    cb({tabs = admin_tabs})
+    local tabs = {}
+    for key, tab in pairs(admin_tabs) do
+        table.insert(tabs, tab)
+    end
+
+    cb({tabs = tabs})
 end)

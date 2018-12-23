@@ -10,9 +10,9 @@ $(function() {
             }
         }
 
-        let body = $('body').html();
-        let result = Mustache.render(body, data);
-        $('body').html(result);
+        let tpl = $('#main_tpl').html();
+        let result = Mustache.render(tpl, data);
+        $('.container').html(result);
 
         $('.nav.nav-tabs a').first().addClass('active');
         $('.panels div.panel').first().addClass('active');
