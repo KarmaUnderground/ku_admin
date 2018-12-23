@@ -12,6 +12,7 @@ a {
 h3 {
     color: #632b2b;
 }
+
 .container {
     background-color: #fff;
     border: solid 1px #888;
@@ -100,6 +101,13 @@ h3 {
 
 .menu .nav-tabs {
     border-bottom: 1px solid #632b2b;
+}
+
+.menu .nav-tabs .nav-item a.active {
+    background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjwhRE9DVFlQRSBzdmcgIFBVQkxJQyAnLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4nICAnaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkJz48c3ZnIGhlaWdodD0iNTEyIiB3aWR0aD0iNTEyIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA0MSAzNCIgIGlkPSJMYXllcl8xIiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCA0MSAzNCIgIHhtbDpzcGFjZT0icHJlc2VydmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPjxwYXRoIGQ9Ik0zMy45NDksMTZDMzMuNDI5LDcuMDgsMjYuMDUxLDAsMTcsMEM3LjYxMSwwLDAsNy42MTEsMCwxN3M3LjYxMSwxNywxNywxN3YtNmMtNi4wNzUsMC0xMS00LjkyNS0xMS0xMSAgUzEwLjkyNSw2LDE3LDZjNS43MzcsMCwxMC40NDMsNC4zOTQsMTAuOTQ5LDEwaC02Ljg0OUwzMSwyNS44OTlMNDAuODk5LDE2SDMzLjk0OXoiIGZpbGw9IiM2MzJiMmIiLz48L3N2Zz4=');
+    background-size: 15px 15px;
+    background-repeat: no-repeat;
+    background-position-x: right;
 }
 
 .footer {
