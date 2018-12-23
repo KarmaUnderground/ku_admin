@@ -1,22 +1,51 @@
+let global_tabs = {};
+
 $(function() {
+    window.addEventListener('message', function(event){
+        switch(event.data.action){
+            case "ku_admin_show_menu":
+                show_menu();
+                break;
+            case "ku_admin_close_menu":
+                close_menu();
+                break;
+            case "ku_admin_set_tabs":
+                build_tabs(event.data.tabs);
+                break;
+        }
+    })
+
     $(".header .col.quit").click(function(event){
         close_menu();
     });
 
     function build_tabs(data) {
         for (tab in data.tabs) {
-            for (template in data.tabs[tab].templates) {
-                data.tabs[tab].templates[template] = Mustache.render(data.tabs[tab].templates[template], data.tabs[tab]);
-            }
+            //for (template in data.tabs[tab].templates) {
+            //    data.tabs[tab].templates[template] = Mustache.render(data.tabs[tab].templates[template], data.tabs[tab]);
+            //}
+
+            global_tabs[data.tabs[tab].resource + '_' + data.tabs[tab].name] = data.tabs[tab];
         }
 
         let tpl = $('#main_tpl').html();
         let result = Mustache.render(tpl, data);
         $('.container').html(result);
 
+        $('.nav.nav-tabs a').click(function() {
+            let obj = $(this);
+            let event = new MessageEvent('message', {
+                data: { action: global_tabs[obj.attr('tab_id')].refresh_function }
+            });
+
+            window.dispatchEvent(event);
+        });
+
         $('.nav.nav-tabs a').first().addClass('active');
         $('.panels div.panel').first().addClass('active');
         $('.panels div.panel').first().addClass('show');
+
+        $('.nav.nav-tabs a').first().click();
     }
 
     function show_menu() {
@@ -45,20 +74,6 @@ $(function() {
         $('body').hide();
         $.post('http://ku_admin/menu_closed', JSON.stringify({}));
     }
-
-    window.addEventListener('message', function(event){
-        switch(event.data.action){
-            case "ku_admin_show_menu":
-                show_menu();
-                break;
-            case "ku_admin_close_menu":
-                close_menu();
-                break;
-            case "ku_admin_set_tabs":
-                build_tabs(event.data.tabs);
-                break;
-        }
-    })
 
     document.onkeyup = function (data) {
         if (data.which == 27) { // Escape key

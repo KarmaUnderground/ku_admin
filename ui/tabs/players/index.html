@@ -1,26 +1,43 @@
+<script id="player_table_tpl" type="text/template">
+    <table class="table table-striped table-bordered" style="width:100%">
+            <thead>
+                <tr>
+                    <th>actions</th>
+                    <th>identifier</th>
+                    <th>name</th>
+                    <th>permission_level</th>
+                    <th>group</th>
+                    <th>job</th>
+                    <th>job_grade</th>
+                    <th>money</th>
+                    <th>bank</th>
+                    <th>license</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#players}}
+                    <tr>
+                        <td><button class="actions_player">actions</button></td>
+                        <td>{{{identifier}}}</td>
+                        <td>{{{name}}}</td>
+                        <td>{{{permission_level}}}</td>
+                        <td>{{{group}}}</td>
+                        <td>{{{job}}}</td>
+                        <td>{{{job_grade}}}</td>
+                        <td>{{{money}}}</td>
+                        <td>{{{bank}}}</td>
+                        <td>{{{license}}}</td>
+                    </tr>
+                {{/players}}
+            </tbody>
+        </table>
+        
+        {{{templates.components_player_edit_modal}}}
+</script>
+
 <link href="ku_admin/ui/tabs/players/index.css" rel="stylesheet" />
 
-<table class="table table-striped table-bordered" style="width:100%">
-    <thead>
-        <tr>
-            <th>actions</th>
-            <th>identifier</th>
-            <th>name</th>
-            <th>permission_level</th>
-            <th>group</th>
-            <th>job</th>
-            <th>job_grade</th>
-            <th>money</th>
-            <th>bank</th>
-            <th>license</th>
-        </tr>
-    </thead>
-    <tbody>
-
-    </tbody>
-</table>
-
-{{{templates.components_player_edit_modal}}}
+<div id="player_table"></div>
 
 <!--===========================================
     Player tab                              -->

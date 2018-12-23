@@ -6,11 +6,11 @@ Citizen.CreateThread(function()
     end
 end)
 
-RegisterNUICallback('get_players', function()
-    ESX.TriggerServerCallback("ku_admin:getPlayers", function(players)
+RegisterNUICallback('getPlayers', function()
+    ESX.TriggerServerCallback("ku_admin:getPlayers", function(data)
         SendNUIMessage({
             action = "ku_admin_set_players",
-            players = players
+            players = data
         })
     end)
 end)

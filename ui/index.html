@@ -20,7 +20,7 @@
                         <ul class="nav nav-tabs">
                             {{#tabs}}
                             <li class="nav-item">
-                                <a data-toggle="tab" class="nav-link" href="#{{name}}">{{label}}</a>
+                                <a data-toggle="tab" class="nav-link" href="#{{resource}}_{{name}}" tab_id="{{resource}}_{{name}}">{{label}}</a>
                             </li>
                             {{/tabs}}
                         </ul>
@@ -28,7 +28,7 @@
                 </div>
                 <div class="panels">
                     {{#tabs}}
-                    <div id="{{name}}" class="panel tab-pane fade">
+                    <div id="{{resource}}_{{name}}" class="panel tab-pane fade">
                         {{{templates.main}}}
                     </div>
                     {{/tabs}}

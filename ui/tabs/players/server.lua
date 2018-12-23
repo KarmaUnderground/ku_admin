@@ -45,5 +45,5 @@ ESX.RegisterServerCallback('ku_admin:getPlayers', function(source, cb)
         })
     end
 
-    cb(users)
+    cb({players = users})
 end)

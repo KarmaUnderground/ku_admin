@@ -33,7 +33,10 @@ AddEventHandler('ku_admin:registerUIAdminTabs', function(resource, tabs)
             end
         end
 
-        admin_tabs[resource ..'/' .. tab.root] = tab
+        tab.resource = resource
+        tab.refresh_function = ('%s_%s_refresh_panel'):format(resource, name)
+
+        admin_tabs[('%s/%s'):format(resource, tab.root)] = tab
     end
 end)
 
