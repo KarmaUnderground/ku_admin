@@ -1,8 +1,6 @@
 body {
     background-color: transparent;
     overflow: hidden;
-    /*
-    */
     display: none;
     zoom: 100%;
 }
@@ -66,23 +64,15 @@ h3 {
     border-bottom: solid 1px #632b2b;
 }
 
-.content .panels .tab-pane .pane-content {
+.content .panels .tab-pane {
     overflow: auto;
 }
 
-.content .panels .tab-pane .pane-content table {
+.content .panels .tab-pane table {
     font-size: 12px;
 }
 
-.content .panels .tab-pane .pane-content table tr {
-    
-}
-
-.content .panels .tab-pane .pane-content table tr.odd {
-
-}
-
-.content .panels .tab-pane .pane-content table th {
+.content .panels .tab-pane table th {
     text-align: center;
     padding-top: 5px;
     padding-bottom: 5px;
@@ -90,28 +80,11 @@ h3 {
     color: #ffffff;
 }
 
-.content .panels .tab-pane .pane-content table td {
+.content .panels .tab-pane table td {
     padding-top: 5px;
     padding-bottom: 5px;
     position: relative;
     white-space: nowrap;
-}
-
-.content .panels .tab-pane .pane-content table td.action {
-    text-align: center;
-    padding-left: 0;
-    padding-right: 0;
-}
-
-.content .panels .tab-pane .pane-content table button.actions_player {
-    width:100%;
-}
-
-.dd_actions_player {
-    top:26px;
-    left: 12px;
-    padding-left: 15px;
-    box-shadow: 5px 5px 5px rgb(107, 107, 107);
 }
 
 .menu {

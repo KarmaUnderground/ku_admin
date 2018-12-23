@@ -10,11 +10,13 @@ server_scripts {
 
 	'config.lua',
 
-	--'locales/en.lua',
-	--'locales/fr.lua',
+	'locales/en.lua',
+	'locales/fr.lua',
 
 	'server/callbacks.lua',
 	'server/main.lua',
+
+	'ui/tabs/players/server.lua',
 }
 
 client_scripts {
@@ -22,11 +24,13 @@ client_scripts {
 
 	'config.lua',
 
-	--'locales/en.lua',
-	--'locales/fr.lua',
+	'locales/en.lua',
+	'locales/fr.lua',
 
 	'client/callbacks.lua',
 	'client/main.lua',
+
+	'ui/tabs/players/client.lua',
 }
 
 ui_page {
@@ -34,9 +38,9 @@ ui_page {
 }
 
 files({
-    'ui/index.html',
-    'ui/menu.js',
-	'ui/menu.css',
+	'ui/index.html',
+	'ui/index.js',
+	'ui/index.css',
 	
 	-- jQuery
 	'ui/vendor/jquery/jquery-3.3.1.min.js',
@@ -47,7 +51,10 @@ files({
 	'ui/vendor/bootstrap/popper.min.js',
 
 	-- Animate
-	'ui/vendor/animate/animate.css'
+	'ui/vendor/animate/animate.css',
+
+	-- Mustache
+	'ui/vendor/mustache/mustache.min.js',
 })
 
 dependencies {
