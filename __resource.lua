@@ -44,6 +44,10 @@ files({
 	
 	-- jQuery
 	'ui/vendor/jquery/jquery-3.3.1.min.js',
+	'ui/vendor/jquery/jquery-ui.min.css',
+	'ui/vendor/jquery/jquery-ui.min.js',
+	'ui/vendor/jquery/jquery-ui.structure.min.css',
+	'ui/vendor/jquery/jquery-ui.theme.min.css',
 
 	-- Bootstrap
 	'ui/vendor/bootstrap/bootstrap.min.css',
