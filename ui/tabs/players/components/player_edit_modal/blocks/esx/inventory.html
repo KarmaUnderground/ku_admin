@@ -1,0 +1,26 @@
+<div id="ku_admin_player_edit_modal_block_esx_inventory" class="block">
+    <h4>Inventory</h4>
+    <div class="content">
+        <div class="row">
+            <%
+            tpl = _.template($('#player_edit_modal_input_longdesc_trash_tpl').html());
+
+            _(player.inventory).each(function(item, key, list) {            
+                inventory = tpl({
+                    id: "player_modal_input_inventory",
+                    label: item.item,
+                    min: 0,
+                    max: item.limit,
+                    item: JSON.stringify(item),
+                    value: item.count,
+                    db_table: "user_inventory",
+                    db_field: "count",
+                    db_where: "`identifier` = '" + player.information.identifier + "' AND `item` = '" + item.item + "'"
+                });
+                
+                print(inventory);
+            });
+            %>
+        </div>
+    </div>
+</div>

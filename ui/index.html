@@ -1,62 +1,68 @@
+<script id="main_tpl" type="text/template">
+    <div class="screen"></div>
+    <div class="row header">
+        <div class="col title">Karma Underground - Administration</div>
+        <div class="col-1 quit">X</div>
+    </div>
+    <div class="row content">
+        <div class="col">
+            <div class="row menu">
+                <div class="col">
+                    <ul class="nav nav-tabs">
+                        <% _.each(tabs, function(item, key, list) { %>
+                        <li class="nav-item">
+                            <a data-toggle="tab" class="nav-link" href="#<%= item.resource %>_<%= item.name %>" tab_id="<%= item.resource %>_<%= item.name %>"><%= item.label %></a>
+                        </li>
+                        <% }); %>
+                    </ul>
+                </div>
+            </div>
+            <div class="panels">
+                <% _.each(tabs, function(item, key, list) { %>
+                <div id="<%= item.resource %>_<%= item.name %>" class="panel tab-pane fade">
+                    <%= item.templates.main %>
+                </div>
+                <% }); %>
+            </div>
+        </div>
+    </div>
+    <div class="row footer">
+        <div class="col"></div>
+    </div>
+</script>
+
 <html>
 
 <head>
-    <link rel="stylesheet" href="vendor/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="vendor/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="vendor/animate/animate.css" />
+
+    <link rel="stylesheet" href="vendor/iconic/css/open-iconic-bootstrap.min.css">
+
+    <link rel="stylesheet" href="vendor/jquery/jquery-ui.min.css">
+    <link rel="stylesheet" href="vendor/jquery/jquery-ui.structure.min.css">
+    <link rel="stylesheet" href="vendor/jquery/jquery-ui.theme.min.css">
 
     <link rel="stylesheet" href="index.css" />
 </head>
 
 <body>
-    <script id="main_tpl" type="text/template">
-        <div class="row header">
-            <div class="col title">Karma Underground - Administration</div>
-            <div class="col quit">X</div>
-        </div>
-        <div class="row content">
-            <div class="col">
-                <div class="row menu">
-                    <div class="col">
-                        <ul class="nav nav-tabs">
-                            {{#tabs}}
-                            <li class="nav-item">
-                                <a data-toggle="tab" class="nav-link" href="#{{resource}}_{{name}}" tab_id="{{resource}}_{{name}}">{{label}}</a>
-                            </li>
-                            {{/tabs}}
-                        </ul>
-                    </div>
-                </div>
-                <div class="panels">
-                    {{#tabs}}
-                    <div id="{{resource}}_{{name}}" class="panel tab-pane fade">
-                        {{{templates.main}}}
-                    </div>
-                    {{/tabs}}
-                </div>
-            </div>
-        </div>
-        <div class="row footer">
-            <div class="col"></div>
-        </div>
-    </script>
-    <div class="container">
-    </div>
-    <!--===========================================
-        jQuery                                  -->
-    <script src="vendor/jquery/jquery-3.3.1.min.js"></script>
+    <div class="container"></div>
+
     <!--===========================================
         FiveM                                   -->
     <script src="nui://game/ui/jquery.js" type="text/javascript"></script>
     <!--===========================================
-        Mustache                                -->
-    <script src="vendor/mustache/mustache.min.js" type="text/javascript"></script>
+        jQuery                                  -->
+    <script src="vendor/jquery/jquery-3.3.1.min.js"></script>
+    <script src="vendor/jquery/jquery-ui.min.js"></script>
+    <!--===========================================
+        Underscore                              -->
+    <script src="vendor/underscore/underscore.min.js" type="text/javascript"></script>
     <!--===========================================
         Bootstrap                               -->
     <script src="vendor/bootstrap/popper.min.js"></script>
     <script src="vendor/bootstrap/bootstrap.min.js"></script>
-    <!--===========================================
-        FiveM                                   -->
-    <script src="nui://game/ui/jquery.js" type="text/javascript"></script>
     <!--===========================================
         Karma Underground                       -->
     <script src="index.js"></script>

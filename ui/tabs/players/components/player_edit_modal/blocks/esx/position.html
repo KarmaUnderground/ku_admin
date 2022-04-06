@@ -1,0 +1,32 @@
+<div class="block">
+    <h4>Position</h4>
+    <div class="content">
+        <div class="row">
+            <div class="col-4">
+                <div class="input-group input-group-sm mb-2">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">X</span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="firstname" value="<%= player.information.position.x %>">
+                </div>
+                <div class="input-group input-group-sm mb-2">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Y</span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="firstname" value="<%= player.information.position.y %>">
+                </div>
+                <div class="input-group input-group-sm mb-2">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Z</span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="firstname" value="<%= player.information.position.z %>">
+                </div>
+            </div>
+            <div class="col-8">
+                <button type="button" class="btn btn-secondary btn-block btn-sm">Send to new position</button>
+                <button type="button" class="btn btn-secondary btn-block btn-sm">Bring to me</button>
+                <button type="button" class="btn btn-secondary btn-block btn-sm">Go to</button>
+            </div>
+        </div>
+    </div>
+</div>

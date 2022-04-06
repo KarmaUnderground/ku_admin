@@ -1,52 +1,48 @@
-<script id="player_table_tpl" type="text/template">
+<script id="ku_admin_players_table_tpl" type="text/template">
+    <%= window.global_tabs['ku_admin_players'].templates.components_player_edit_modal_index %>
     <table class="table table-striped table-bordered" style="width:100%">
-            <thead>
+        <thead>
+            <tr>
+                <th></th>
+                <th>identifier</th>
+                <th>name</th>
+                <th>permission_level</th>
+                <th>group</th>
+                <th>job</th>
+                <th>job_grade</th>
+                <th>money</th>
+                <th>bank</th>
+                <th>license</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% _.each(players, function(item, key, list) { %>
                 <tr>
-                    <th>actions</th>
-                    <th>identifier</th>
-                    <th>name</th>
-                    <th>permission_level</th>
-                    <th>group</th>
-                    <th>job</th>
-                    <th>job_grade</th>
-                    <th>money</th>
-                    <th>bank</th>
-                    <th>license</th>
+                    <td><button class="details_player" player_id="<%= item.identifier %>">details</button></td>
+                    <td><%= item.identifier %></td>
+                    <td><%= item.name %></td>
+                    <td><%= item.permission_level %></td>
+                    <td><%= item.group %></td>
+                    <td><%= item.job %></td>
+                    <td><%= item.job_grade %></td>
+                    <td><%= item.money %></td>
+                    <td><%= item.bank %></td>
+                    <td><%= item.license %></td>
                 </tr>
-            </thead>
-            <tbody>
-                {{#players}}
-                    <tr>
-                        <td><button class="actions_player">actions</button></td>
-                        <td>{{{identifier}}}</td>
-                        <td>{{{name}}}</td>
-                        <td>{{{permission_level}}}</td>
-                        <td>{{{group}}}</td>
-                        <td>{{{job}}}</td>
-                        <td>{{{job_grade}}}</td>
-                        <td>{{{money}}}</td>
-                        <td>{{{bank}}}</td>
-                        <td>{{{license}}}</td>
-                    </tr>
-                {{/players}}
-            </tbody>
-        </table>
-        
-        <ul style="display:none" class="dd_actions_player animated rollIn dropdown-menu">
-            <li><a href="#">details</a></li>
-            <li><a href="#">teleport_to</a></li>
-            <li><a href="#">promote_admin</a></li>
-            <li><a href="#">ban</a></li>
-            <li class="dropdown-divider"></li>
-            <li><a href="#">close</a></li>
-        </ul>
-
-        {{{templates.components_player_edit_modal}}}
+            <% }); %>
+        </tbody>
+    </table>
+    
+    <!--ul style="display:none" class="dd_actions_player animated rollIn dropdown-menu">
+        <li><a href="#" class="action_details">details</a></li>
+        <li><a href="#" class="action_teleport_to">teleport_to</a></li>
+        <li><a href="#" class="action_promote_admin">promote_admin</a></li>
+        <li><a href="#" class="action_ban">ban</a></li>
+        <li class="dropdown-divider"></li>
+        <li><a href="#">close</a></li>
+    </ul-->
 </script>
 
 <link href="ku_admin/ui/tabs/players/index.css" rel="stylesheet" />
-
-<div id="player_table"></div>
-<!--===========================================
-    Player tab                              -->
+<div id="ku_admin_players_table"></div>
 <script src="ku_admin/ui/tabs/players/index.js"></script>

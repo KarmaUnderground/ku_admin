@@ -1,0 +1,17 @@
+<div class="block">
+    <h4>Apparence</h4>
+    <div class="content">
+        <div class="row">
+            <% _(player.information.apparence).each(function(item, key, list) { %>
+            <div class="col-xs-2 long-desc">
+                <div class="input-group input-group-sm mb-2">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><%= key %></span>
+                    </div>
+                    <input type="number" class="form-control" placeholder="firstname" value="<%= item %>">
+                </div>
+            </div>
+            <% }); %>
+        </div>
+    </div>
+</div>

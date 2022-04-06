@@ -1,0 +1,61 @@
+<div class="block">
+    <h4>Character</h4>
+    <div class="content">
+        <div class="row">
+            <div class="col-6">
+                <% if (_(resources).contains('esx_identity')) { %>
+                <div class="input-group input-group-sm mb-2">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Firstname</span>
+                    </div>
+                    <input type="text" id="player_modal_input_firstname" class="form-control" db_table="users" db_field="firstname" db_where="`identifier` = '<%= player.information.identifier %>'" db_action="update" value="<%= player.information.firstname %>">
+                </div>
+                <div class="input-group input-group-sm mb-2">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Lastname</span>
+                    </div>
+                    <input type="text" id="player_modal_input_lastname" class="form-control" db_table="users" db_field="lastname" db_where="`identifier` = '<%= player.information.identifier %>'" db_action="update" value="<%= player.information.lastname %>">
+                </div>
+                <% } %>
+
+                <% if (_(resources).contains('esx_phone')) { %>
+                <div class="input-group input-group-sm mb-2">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Phone number</span>
+                    </div>
+                    <input type="number" id="player_modal_input_phonenumber" class="form-control" db_table="users" db_field="phone_number" db_where="`identifier` = '<%= player.information.identifier %>'" db_action="update" value="<%= player.information.phone_number %>">
+                </div>
+                <% } %>
+            </div>
+            <div class="col-6">
+                <% if (_(resources).contains('esx_identity')) { %>
+                <div class="btn-group input-group input-group-sm mb-2">
+                    <div class="input-group-prepend dropright">
+                        <span class="input-group-text">Sex</span>
+                        <button type="button" class="btn btn-sm btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span class="sr-only">Toggle Dropdown</span>
+                        </button>
+                        <div class="dropdown-menu" input="player_modal_input_sex">
+                            <a class="dropdown-item" href="#" value="m">Male</a>
+                            <a class="dropdown-item" href="#" value="f">Female</a>
+                        </div>
+                    </div>
+                    <input type="text" id="player_modal_input_sex" class="form-control" readonly db_table="users" db_field="sex" db_where="`identifier` = '<%= player.information.identifier %>'" db_action="update" value="<%= player.information.sex %>">
+                </div>
+                <div class="input-group input-group-sm mb-2">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Height</span>
+                    </div>
+                    <input type="number" id="player_modal_input_height" class="form-control" placeholder="firstname" value="<%= player.information.height %>">
+                </div>
+                <div class="input-group input-group-sm mb-2">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Date of birth</span>
+                    </div>
+                    <input type="text" id="player_modal_input_dateofbirth" class="form-control" style="width:290px" id="input-text-dateofbirth" db_table="users" db_field="dateofbirth" db_where="`identifier` = '<%= player.information.identifier %>'" db_action="update">
+                </div>
+                <% } %>
+            </div>
+        </div>
+    </div>
+</div>

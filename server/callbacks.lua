@@ -26,7 +26,7 @@ AddEventHandler('ku_admin:registerUIAdminTabs', function(resource, tabs)
                 else
                     path = path:gsub("/","_"):gsub(".html","")
                 end
-    
+
                 tab.templates[path] = content
                 tab.templates[path] = extract_js(tab.templates[path], files)
                 tab.templates[path] = extract_css(tab.templates[path], files)
@@ -53,11 +53,13 @@ function extract_js(template, files)
 end
 
 function extract_css(template, files)
+    local style_tag = "";
+
     for style in template:gmatch("<link[^>]*href=\"([^\"]*)\"[^>]*/>") do
         if files[style] == nil then
             print(("ku_admin: UI tabs did not find file refered in html: %s"):format(style))
         else
-            template = template:gsub("<link[^\"]*href=\"" .. style .. "\"[^>]*/>", "\n<style>\n" .. files[style] .. "\n</style>\n")
+            template = template:gsub("<link[^\"]*href=\"" .. style .. "\"[^>]*/>", '\n<style>\n' .. (files[style]):gsub('%%','%%%%') .. '\n</style>\n')
         end
     end
 

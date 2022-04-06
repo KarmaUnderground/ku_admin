@@ -1,0 +1,39 @@
+<div class="block">
+    <h4>Work</h4>
+    <div class="content">
+        <div class="row">
+            <div class="col-6">
+                <div class="btn-group input-group input-group-sm mb-2">
+                    <div class="input-group-prepend dropright">
+                        <span class="input-group-text">Job</span>
+                        <button type="button" class="btn btn-sm btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span class="sr-only">Toggle Dropdown</span>
+                        </button>
+                        <div class="dropdown-menu" db_element="jobs" input="player_modal_input_job">
+                            <% _(assets.jobs).each(function(item, key, list) { %>
+                            <a class="dropdown-item" value="<%= item.name %>"><%= item.name %></a>
+                            <% }); %>
+                        </div>
+                    </div>
+                    <input type="text" id="player_modal_input_job" db_field="job" class="form-control" readonly value="<%= player.information.job %>">
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="btn-group input-group input-group-sm mb-2">
+                    <div class="input-group-prepend dropright">
+                        <span class="input-group-text">Grade</span>
+                        <button type="button" class="btn btn-sm btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span class="sr-only">Toggle Dropdown</span>
+                        </button>
+                        <div class="dropdown-menu" db_element="job_grades" input="player_modal_input_job_grade">
+                            <% _(assets.job_grades).each(function(item, key, list) { %>
+                            <a class="dropdown-item" href="#" job="<%= item.job_name %>" value="<%= item.grade %>"><%= item.name %></a>
+                            <% }); %>
+                        </div>
+                    </div>
+                    <input type="text" id="player_modal_input_job_grade" db_field="job_grade" class="form-control" readonly placeholder="group" value="<%= player.information.job_grade %>">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

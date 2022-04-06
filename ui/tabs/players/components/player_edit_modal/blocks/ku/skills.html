@@ -1,0 +1,26 @@
+<div id="ku_admin_player_edit_modal_block_ku_skills" class="block">
+    <h4>Skills</h4>
+    <div class="content">
+        <div class="row">
+            <%
+            tpl = _.template($('#player_edit_modal_input_longdesc_trash_tpl').html());
+
+            _(player.skills).each(function(item, key, list) {            
+                skill = tpl({
+                    id: "player_modal_input_skill",
+                    label: item.name,
+                    min: 0,
+                    max: item.skill_rate,
+                    item: JSON.stringify(item),
+                    value: item.tries,
+                    db_table: "user_skills",
+                    db_field: "tries",
+                    db_where: "`identifier` = '" + player.information.identifier + "' AND `name` = '" + item.name + "'"
+                });
+                
+                print(skill);
+            });
+            %>
+        </div>
+    </div>
+</div>

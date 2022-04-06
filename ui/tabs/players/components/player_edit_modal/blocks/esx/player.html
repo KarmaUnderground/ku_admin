@@ -1,0 +1,57 @@
+<div class="block">
+    <h4>Player</h4>
+    <div class="content">
+        <div class="row">
+            <div class="col-12">
+                <div class="input-group input-group-sm mb-2">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Identifier</span>
+                    </div>
+                    <input type="text" class="form-control" readonly value="<%= player.information.identifier %>">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <div class="btn-group input-group input-group-sm mb-2">
+                    <div class="input-group-prepend dropright">
+                        <span class="input-group-text">Groups</span>
+                        <button type="button" class="btn btn-sm btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span class="sr-only">Toggle Dropdown</span>
+                        </button>
+                        <div class="dropdown-menu" input="player_modal_input_group">
+                            <% _(assets.groups).each(function(item, key, list) { %>
+                            <a class="dropdown-item" href="#" value="<%= item %>"><%= item %></a>
+                            <% }); %>
+                        </div>
+                    </div>
+                    <input type="text" id="player_modal_input_group" class="form-control" readonly db_table="users" db_field="group" db_where="`identifier` = '<%= player.information.identifier %>'" db_action="update" value="<%= player.information.group %>">
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="btn-group input-group input-group-sm mb-2">
+                    <div class="input-group-prepend dropright">
+                        <span class="input-group-text">Level</span>
+                        <button type="button" class="btn btn-sm btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span class="sr-only">Toggle Dropdown</span>
+                        </button>
+                        <div class="dropdown-menu" input="player_modal_input_level">
+                            <a class="dropdown-item" href="#" value="0">0</a>
+                            <a class="dropdown-item" href="#" value="1">1</a>
+                            <a class="dropdown-item" href="#" value="2">2</a>
+                            <a class="dropdown-item" href="#" value="3">3</a>
+                            <a class="dropdown-item" href="#" value="4">4</a>
+                            <a class="dropdown-item" href="#" value="5">5</a>
+                            <a class="dropdown-item" href="#" value="6">6</a>
+                            <a class="dropdown-item" href="#" value="7">7</a>
+                            <a class="dropdown-item" href="#" value="8">8</a>
+                            <a class="dropdown-item" href="#" value="9">9</a>
+                            <a class="dropdown-item" href="#" value="10">10</a>
+                        </div>
+                    </div>
+                    <input type="text" class="form-control" id="player_modal_input_level" readonly db_table="users" db_field="permission_level" db_where="`identifier` = '<%= player.information.identifier %>'" db_action="update" value="<%= player.information.permission_level %>">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

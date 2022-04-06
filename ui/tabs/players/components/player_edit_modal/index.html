@@ -1,0 +1,50 @@
+<script id="player_edit_modal_tpl" type="text/template">
+    <div class="row header">
+        <div class="col title"><%= player.information.firstname %> <%= player.information.lastname %></div>
+        <div class="col-1 quit">X</div>
+    </div>
+    <div class="content panel">
+        <div class="row">
+            <div class="col">
+                <%= window.global_tabs['ku_admin_players'].templates.components_player_edit_modal_blocks_esx_player %>
+
+                <% if (_(resources).contains('esx_identity') || _(resources).contains('esx_phone')) { %>
+                    <%= window.global_tabs['ku_admin_players'].templates.components_player_edit_modal_blocks_esx_character %>
+                <% }; %>
+
+                <% if (_(resources).contains('esx_jobs')) { %>
+                    <%= window.global_tabs['ku_admin_players'].templates.components_player_edit_modal_blocks_esx_work %>
+                <% }; %>
+                
+                <% if (_(resources).contains('ku_skills')) { %>
+                    <%= window.global_tabs['ku_admin_players'].templates.components_player_edit_modal_blocks_ku_skills %>
+                <% }; %>
+
+                <%= window.global_tabs['ku_admin_players'].templates.components_player_edit_modal_blocks_esx_position %>
+                <%= window.global_tabs['ku_admin_players'].templates.components_player_edit_modal_blocks_esx_money %>
+                <%= window.global_tabs['ku_admin_players'].templates.components_player_edit_modal_blocks_esx_inventory %>
+                <%= window.global_tabs['ku_admin_players'].templates.components_player_edit_modal_blocks_esx_loadout %>
+            </div>
+        </div>
+    </div>
+    <div class="row footer">
+        <div class="col quit"><button class="save" id="player_edit_modal_save" disabled="disabled">Save</button><button class="cancel quit">Cancel</button></div>
+    </div>
+</script>
+
+<script id="player_edit_modal_input_longdesc_trash_tpl" type="text/template">
+    <div class="col-xs-2 long-desc">
+        <div class="input-group input-group-sm mb-2">
+            <div class="input-group-prepend action">
+                <span class="input-group-text"><%= label %></span>
+                <button type="button" class="btn btn-sm btn-secondary trash" aria-haspopup="true" aria-expanded="false" id="<%= id %>_delete_<%= label %>" db_table="<%= db_table %>" db_field="" db_where="<%= db_where %>" db_action="delete">
+                    <span class="oi oi-trash"></span>
+                </button>
+            </div>
+            <input type="number" class="form-control" id="<%= id %>_<%= label %>" min="<%= min %>" max="<%= max %>" db_table="<%= db_table %>" db_field="<%= db_field %>" db_where="<%= db_where %>" db_action="update" item="<%= item %>" value="<%= value %>">
+        </div>
+    </div>
+</script>
+
+<link href="ku_admin/ui/tabs/players/components/player_edit_modal/index.css" rel="stylesheet" />
+<div class="player_edit_modal container" style="display:none"></div>

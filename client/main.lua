@@ -28,13 +28,13 @@ Citizen.CreateThread(function()
         
             ESX.TriggerServerCallback("ku_admin:getUIAdminTabs", function(tabs)
                 SendNUIMessage({
-                    action = "ku_admin_set_tabs",
+                    action = "ku_admin_show_menu",
                     tabs = tabs
                 })
                 
-                SendNUIMessage({
-                    action = "ku_admin_show_menu"
-                })
+                --SendNUIMessage({
+                --    action = "ku_admin_show_menu"
+                --})
             end)
         end
 

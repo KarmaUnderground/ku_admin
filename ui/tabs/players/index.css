@@ -1,6 +1,8 @@
 .dd_actions_player {
+    background-color: var(--bg-contrast-color);
+    box-shadow: var(--box-shadow);
+
     top:26px;
     left: 12px;
     padding-left: 15px;
-    box-shadow: 5px 5px 5px rgb(107, 107, 107);
 }

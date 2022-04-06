@@ -1,0 +1,91 @@
+#ku_admin_players_table .player_edit_modal {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+
+    z-index: 1000;
+
+    opacity: 1;
+}
+
+#ku_admin_players_table .player_edit_modal .header {
+    height: 35px;
+}
+
+#ku_admin_players_table .player_edit_modal .header .quit {
+    width: 20px;
+}
+
+#ku_admin_players_table .player_edit_modal .panel {
+    overflow: auto;
+    margin: 5px;
+}
+
+#ku_admin_players_table .player_edit_modal .panel .block {
+    border: var(--border);
+    border-radius: 3px;
+    margin-bottom: 10px;
+}
+
+#ku_admin_players_table .player_edit_modal .panel .block h4 {
+    background-color: var(--bg-contrast-color);
+    color: var(--txt-contrast-color);
+
+    font-size: 14px;
+    padding: 5px 5px;
+}
+
+#ku_admin_players_table .player_edit_modal .panel .block .content {
+    padding: 5px 0;
+}
+
+#ku_admin_players_table .player_edit_modal .panel .block select {
+    z-index: 1001;
+}
+
+#ku_admin_players_table .player_edit_modal .panel .block .input-group .input-group-text {
+    width: 125px;
+}
+
+#ku_admin_players_table .player_edit_modal .panel .block .btn-group .input-group-text {
+    width: 100px;
+}
+
+#ku_admin_players_table .player_edit_modal .panel .block .col-xs-2.long-desc .input-group-prepend .input-group-text {
+    width: 205px;
+}
+
+#ku_admin_players_table .player_edit_modal .panel .block .col-xs-2.long-desc .input-group-prepend.action .input-group-text {
+    width: 175px;
+}
+
+#ku_admin_players_table .player_edit_modal .panel .block .col-xs-2.long-desc .input-group-prepend.action .btn {
+    width: 30px;
+}
+
+#ku_admin_players_table .player_edit_modal .panel .block .col-xs-2.long-desc input {
+    width: 90px;
+}
+
+#ku_admin_players_table .player_edit_modal .panel .block .col-xs-2{
+    padding-right:10px; padding-left:10px;
+}
+
+#ku_admin_players_table .player_edit_modal .footer {
+    font-size: 12px;
+    height: 30px;
+}
+
+#ku_admin_players_table .player_edit_modal .footer div {
+    text-align: right;
+    margin-top: 2px;
+}
+
+#ku_admin_players_table .player_edit_modal .footer button {
+    font-size: 12px;
+    height: 25px;
+    margin-left: 10px;
+}

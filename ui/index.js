@@ -1,16 +1,22 @@
-let global_tabs = {};
-
 $(function() {
+    window.global_tabs = {};
+
+    window.clean = function (dom){
+        dom.children().each(function(){
+            $(this).off();
+            clean($(this));
+        });
+        dom.html("");
+    }
+
     window.addEventListener('message', function(event){
         switch(event.data.action){
-            case "ku_admin_show_menu":
-                show_menu();
-                break;
             case "ku_admin_close_menu":
                 close_menu();
                 break;
-            case "ku_admin_set_tabs":
+            case "ku_admin_show_menu":
                 build_tabs(event.data.tabs);
+                show_menu();
                 break;
         }
     })
@@ -20,28 +26,20 @@ $(function() {
     });
 
     function build_tabs(data) {
-        for (tab in data.tabs) {
-            //for (template in data.tabs[tab].templates) {
-            //    data.tabs[tab].templates[template] = Mustache.render(data.tabs[tab].templates[template], data.tabs[tab]);
-            //}
+        window.clean($('.nav-tabs'));
+        window.clean($('.panels'));
 
-            global_tabs[data.tabs[tab].resource + '_' + data.tabs[tab].name] = data.tabs[tab];
+        for (tab in data.tabs) {
+            window.global_tabs[data.tabs[tab].resource + '_' + data.tabs[tab].name] = data.tabs[tab];
         }
 
-        let tpl = $('#main_tpl').html();
-        let result = Mustache.render(tpl, data);
+        let tpl = _.template($('#main_tpl').html());
+        let result = tpl(data);
+
         $('.container').html(result);
 
         $('.nav.nav-tabs a').click(function() {
-            let obj = $(this);
-            let event = new MessageEvent('message', {
-                data: {
-                    action: global_tabs[obj.attr('tab_id')].refresh_function,
-                    tab: global_tabs[obj.attr('tab_id')]
-                }
-            });
-
-            window.dispatchEvent(event);
+            window.dispatchEvent(new MessageEvent('message', {data: {action: window.global_tabs[$(this).attr('tab_id')].refresh_function}}));
         });
 
         $('.nav.nav-tabs a').first().addClass('active');
@@ -50,7 +48,7 @@ $(function() {
 
         $('.nav.nav-tabs a').first().click();
 
-        $('.header .col.quit').click(function(){close_menu();});
+        $('.header .quit').click(function(){close_menu();});
     }
 
     function show_menu() {

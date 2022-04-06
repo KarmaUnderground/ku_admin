@@ -44,21 +44,32 @@ files({
 	
 	-- jQuery
 	'ui/vendor/jquery/jquery-3.3.1.min.js',
-	'ui/vendor/jquery/jquery-ui.min.css',
 	'ui/vendor/jquery/jquery-ui.min.js',
+
+	'ui/vendor/jquery/jquery-ui.min.css',
 	'ui/vendor/jquery/jquery-ui.structure.min.css',
 	'ui/vendor/jquery/jquery-ui.theme.min.css',
 
 	-- Bootstrap
-	'ui/vendor/bootstrap/bootstrap.min.css',
 	'ui/vendor/bootstrap/bootstrap.min.js',
 	'ui/vendor/bootstrap/popper.min.js',
+
+	'ui/vendor/bootstrap/bootstrap.min.css',
+
+	-- Iconic
+	'ui/vendor/iconic/css/open-iconic-bootstrap.min.css',
+
+	'ui/vendor/iconic/fonts/open-iconic.eot',
+	'ui/vendor/iconic/fonts/open-iconic.otf',
+	'ui/vendor/iconic/fonts/open-iconic.svg',
+	'ui/vendor/iconic/fonts/open-iconic.ttf',
+	'ui/vendor/iconic/fonts/open-iconic.woff',
 
 	-- Animate
 	'ui/vendor/animate/animate.css',
 
-	-- Mustache
-	'ui/vendor/mustache/mustache.min.js',
+	-- Underscore
+	'ui/vendor/underscore/underscore.min.js',
 })
 
 dependencies {

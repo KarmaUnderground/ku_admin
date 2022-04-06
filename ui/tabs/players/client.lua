@@ -14,3 +14,21 @@ RegisterNUICallback('getPlayers', function()
         })
     end)
 end)
+
+RegisterNUICallback('getPlayerData', function(data)
+    ESX.TriggerServerCallback("ku_admin:getPlayerData", function(data)
+        SendNUIMessage({
+            action = "ku_admin_set_player_edit_modal",
+            information = data
+        })
+    end, data.identifier)
+end)
+
+RegisterNUICallback('savePlayerData', function(data)
+    ESX.TriggerServerCallback("ku_admin:savePlayerData", function(data)
+        SendNUIMessage({
+            action = "ku_admin_saved_player_edit_modal",
+            information = data
+        })
+    end, data.changes)
+end)
